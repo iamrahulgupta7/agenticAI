@@ -1,0 +1,80 @@
+🎯 What this agent does
+Given a goal like:
+	“Investigate high CPU usage”
+The agent will:
+	1. Decide what to check
+	2. Run Linux commands (top, ps, vmstat, etc.)
+	3. Observe output
+	4. Reason
+	5. Suggest fixes
+
+🧱 STEP 1: System Requirements
+✔ Python 3.10+
+✔ Linux / macOS
+✔ Ollama installed and running
+
+Check Ollama
+
+ollama --version
+Pull model
+
+ollama pull llama3
+
+
+
+📦 STEP 2: Create Virtual Environment (Recommended)
+
+python3 -m venv agentenv
+source agentenv/bin/activate
+
+
+
+📦 STEP 3: Install Dependencies
+
+pip install langchain langchain-community langchain-core
+Verify:
+
+pip list | grep langchain
+
+
+📁 STEP 4: Project Structure
+
+devops-agent/
+│
+├── devops_agent.py
+└── README.md (optional)
+
+
+🧠 STEP 5: FULL RUNNABLE SCRIPT
+📄 File: devops_agent.py
+================================================
+📄 File: devops_agent.py
+command_policy.py --> allowed and not allowed commands
+requirements.txt --> packages required
+
+=========================================================
+
+
+▶️ STEP 6: Run the Agent
+python devops_agent.py
+
+Example input:
+Investigate high CPU usage on this system
+
+
+🔒 STEP 7: Safety Features Included
+
+✅ Command blocking
+✅ Timeout
+✅ Read-only inspection
+❌ No destructive commands
+
+
+🧠 STEP 8: Try More Goals
+
+Check disk IO latency
+Why is memory usage increasing?
+Analyze load average
+Find top 5 memory consuming processes
+Explain vmstat output
+
